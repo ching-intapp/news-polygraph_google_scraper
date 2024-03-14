@@ -1,0 +1,14 @@
+# migrate grpc service
+.venv
+.vendor
+validator.py
+.env
+__pycache__
+*_pb2.py
+.pytest_cache
+
+# config files
+config/local.yml
+
+# pycharm
+.idea
