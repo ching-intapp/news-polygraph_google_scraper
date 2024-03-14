@@ -39,6 +39,9 @@ import ssl
 from typing import Callable, Any, List, Mapping, Union
 from .metrics import request_response_received
 from time import perf_counter
+from async_lru import alru_cache
+from urllib.robotparser import RobotFileParser
+from urllib.parse import urlparse
 
 
 HTTP_RETRY_EXCEPTION_TYPES = (
@@ -50,6 +53,9 @@ HTTP_RETRY_EXCEPTION_TYPES = (
     | retry_if_exception_type(ssl.SSLZeroReturnError)
     | retry_if_exception_type(ssl.SSLError)
 )
+
+
+class ForbiddenByRobotsFileError(Exception): ...
 
 
 class AsyncRetryClient(AsyncClient):
@@ -131,7 +137,14 @@ class AsyncRetryClient(AsyncClient):
         follow_redirects: Union[bool, UseClientDefault] = USE_CLIENT_DEFAULT,
         timeout: Union[TimeoutTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
         extensions: dict = None,
+        ignore_robots_txt=False,
     ) -> Response:
+
+        if not ignore_robots_txt:
+            user_agent = headers.get("user-agent", "*") if headers is not None else "*"
+            if not await self.is_allowed_by_robots_text(url, user_agent):
+                return Response(403)
+
         if not self.persist_cookies:
             self._cookies = Cookies(None)
 
@@ -158,3 +171,34 @@ class AsyncRetryClient(AsyncClient):
                 response_time=response_time,
             )
         return response
+
+    @alru_cache
+    async def get_robots_text_parser(
+        self, base_url: str, user_agent: str
+    ) -> RobotFileParser:
+
+        robots_text_url = f"{base_url}/robots.txt"
+        robot_file_parser = RobotFileParser(robots_text_url)
+
+        response = await self.request(
+            "GET",
+            robots_text_url,
+            headers={"user-agent": user_agent},
+            ignore_robots_txt=True,  # Crucial to prevent a recursive loop
+        )
+
+        if response.status_code == 404:
+            # If no robots.txt is found, consider everything allowed
+            robot_file_parser.allow_all = True
+        else:
+            response.raise_for_status()
+            robot_file_parser.parse(response.iter_lines())
+
+        return robot_file_parser
+
+    async def is_allowed_by_robots_text(self, url: str, user_agent: str) -> bool:
+        parsed_url = urlparse(url)
+        base_url = f"{parsed_url.scheme}://{parsed_url.netloc}"
+        robots_text_parser = await self.get_robots_text_parser(base_url, user_agent)
+
+        return robots_text_parser.can_fetch(url=url, useragent=user_agent)
