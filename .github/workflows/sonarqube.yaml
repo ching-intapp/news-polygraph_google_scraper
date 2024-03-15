@@ -1,0 +1,14 @@
+name: SonarQube analysis
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  call:
+    name: "CI"
+    uses: "delphai/.github/.github/workflows/callable-sonarqube.yaml@master"
+    secrets: inherit
