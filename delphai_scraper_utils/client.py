@@ -55,9 +55,6 @@ HTTP_RETRY_EXCEPTION_TYPES = (
 )
 
 
-class ForbiddenByRobotsFileError(Exception): ...
-
-
 class AsyncRetryClient(AsyncClient):
     def __init__(
         self,
