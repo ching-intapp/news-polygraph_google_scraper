@@ -41,7 +41,7 @@ from .metrics import request_response_received
 from time import perf_counter
 from async_lru import alru_cache
 from urllib.robotparser import RobotFileParser
-from urllib.parse import urlparse
+from urllib.parse import urlparse, urljoin
 
 
 HTTP_RETRY_EXCEPTION_TYPES = (
@@ -175,7 +175,7 @@ class AsyncRetryClient(AsyncClient):
         self, base_url: str, user_agent: str
     ) -> RobotFileParser:
 
-        robots_text_url = f"{base_url}/robots.txt"
+        robots_text_url = urljoin(base_url, "robots.txt")
         robot_file_parser = RobotFileParser(robots_text_url)
 
         response = await super().request(
