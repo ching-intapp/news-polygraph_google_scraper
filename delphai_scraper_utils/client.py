@@ -83,6 +83,7 @@ class AsyncRetryClient(AsyncClient):
         max_retry_attemps: int = 0,
         retry_wait_multiplier: int = 1,
         retry_wait_max: int = 1,
+        ignore_robots_txt: bool = False,
     ):
         super().__init__(
             auth=auth,
@@ -107,6 +108,7 @@ class AsyncRetryClient(AsyncClient):
         )
         self.scraper_id = scraper_id
         self.persist_cookies = persist_cookies
+        self.ignore_robots_txt = ignore_robots_txt
 
         # Wrap request in retry decorator
         self.request = retry(
@@ -134,10 +136,9 @@ class AsyncRetryClient(AsyncClient):
         follow_redirects: Union[bool, UseClientDefault] = USE_CLIENT_DEFAULT,
         timeout: Union[TimeoutTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
         extensions: dict = None,
-        ignore_robots_txt=False,
     ) -> Response:
 
-        if not ignore_robots_txt:
+        if not self.ignore_robots_txt:
             user_agent = headers.get("user-agent", "*") if headers is not None else "*"
             if not await self.is_allowed_by_robots_text(url, user_agent):
                 return Response(403)
@@ -177,11 +178,10 @@ class AsyncRetryClient(AsyncClient):
         robots_text_url = f"{base_url}/robots.txt"
         robot_file_parser = RobotFileParser(robots_text_url)
 
-        response = await self.request(
+        response = await super().request(
             "GET",
             robots_text_url,
             headers={"user-agent": user_agent},
-            ignore_robots_txt=True,  # Crucial to prevent a recursive loop
         )
 
         if response.status_code == 404:
