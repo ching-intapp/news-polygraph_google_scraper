@@ -37,8 +37,7 @@ from tenacity import (
 )
 import ssl
 from typing import Callable, Any, List, Mapping, Union
-from .metrics import request_response_received
-from time import perf_counter
+from .metrics import request_timer
 from aiocache import cached
 from urllib.robotparser import RobotFileParser
 from urllib.parse import urlparse, urljoin
@@ -145,30 +144,22 @@ class ScraperClient(AsyncClient):
 
         if not self.persist_cookies:
             self._cookies = Cookies(None)
-
-        response_time = -perf_counter()
-        response = await super().request(
-            method,
-            url,
-            content=content,
-            data=data,
-            files=files,
-            json=json,
-            params=params,
-            headers=headers,
-            cookies=cookies,
-            auth=auth,
-            follow_redirects=follow_redirects,
-            timeout=timeout,
-            extensions=extensions,
-        )
-        response_time += perf_counter()
-        if self.scraper_id:
-            request_response_received(
-                scraper_id=self.scraper_id,
-                response_time=response_time,
+        async with request_timer(scraper_id=self.scraper_id):
+            return await super().request(
+                method,
+                url,
+                content=content,
+                data=data,
+                files=files,
+                json=json,
+                params=params,
+                headers=headers,
+                cookies=cookies,
+                auth=auth,
+                follow_redirects=follow_redirects,
+                timeout=timeout,
+                extensions=extensions,
             )
-        return response
 
     @cached()
     async def get_robots_text_parser(
@@ -176,12 +167,12 @@ class ScraperClient(AsyncClient):
     ) -> RobotFileParser:
         robots_text_url = urljoin(base_url, "robots.txt")
         robot_file_parser = RobotFileParser(robots_text_url)
-
-        response = await super().request(
-            "GET",
-            robots_text_url,
-            headers={"user-agent": user_agent},
-        )
+        async with request_timer(self.scraper_id):
+            response = await super().request(
+                "GET",
+                robots_text_url,
+                headers={"user-agent": user_agent},
+            )
 
         if response.status_code == 404:
             # If no robots.txt is found, consider everything allowed
