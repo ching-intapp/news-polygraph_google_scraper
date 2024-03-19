@@ -55,7 +55,7 @@ HTTP_RETRY_EXCEPTION_TYPES = (
 )
 
 
-class AsyncRetryClient(AsyncClient):
+class ScraperClient(AsyncClient):
     def __init__(
         self,
         *,
