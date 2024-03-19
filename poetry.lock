@@ -1,4 +1,17 @@
 [[package]]
+name = "aiocache"
+version = "0.12.2"
+description = "multi backend asyncio cache"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.extras]
+memcached = ["aiomcache (>=0.5.2)"]
+msgpack = ["msgpack (>=0.5.5)"]
+redis = ["redis (>=4.2.0)"]
+
+[[package]]
 name = "anyio"
 version = "4.3.0"
 description = "High level compatibility layer for multiple asynchronous event loop implementations"
@@ -16,17 +29,6 @@ typing-extensions = {version = ">=4.1", markers = "python_version < \"3.11\""}
 doc = ["Sphinx (>=7)", "packaging", "sphinx-autodoc-typehints (>=1.2.0)", "sphinx-rtd-theme"]
 test = ["anyio[trio]", "coverage[toml] (>=7)", "exceptiongroup (>=1.2.0)", "hypothesis (>=4.0)", "psutil (>=5.9)", "pytest (>=7.0)", "pytest-mock (>=3.6.1)", "trustme", "uvloop (>=0.17)"]
 trio = ["trio (>=0.23)"]
-
-[[package]]
-name = "async-lru"
-version = "2.0.4"
-description = "Simple LRU cache for asyncio"
-category = "main"
-optional = false
-python-versions = ">=3.8"
-
-[package.dependencies]
-typing-extensions = {version = ">=4.0.0", markers = "python_version < \"3.11\""}
 
 [[package]]
 name = "black"
@@ -277,16 +279,16 @@ python-versions = ">=3.8"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "d1005e8882b476dd5e89c4bee53ca55e85babe86c1a3b02bd066edfa6b3c5cea"
+content-hash = "91a0dd54b2656a9347032aafb5df29c9cf789f30c1e0e19eff44ee7d1ad1bb71"
 
 [metadata.files]
+aiocache = [
+    {file = "aiocache-0.12.2-py2.py3-none-any.whl", hash = "sha256:9b6fa30634ab0bfc3ecc44928a91ff07c6ea16d27d55469636b296ebc6eb5918"},
+    {file = "aiocache-0.12.2.tar.gz", hash = "sha256:b41c9a145b050a5dcbae1599f847db6dd445193b1f3bd172d8e0fe0cb9e96684"},
+]
 anyio = [
     {file = "anyio-4.3.0-py3-none-any.whl", hash = "sha256:048e05d0f6caeed70d731f3db756d35dcc1f35747c8c403364a8332c630441b8"},
     {file = "anyio-4.3.0.tar.gz", hash = "sha256:f75253795a87df48568485fd18cdd2a3fa5c4f7c5be8e5e36637733fce06fed6"},
-]
-async-lru = [
-    {file = "async-lru-2.0.4.tar.gz", hash = "sha256:b8a59a5df60805ff63220b2a0c5b5393da5521b113cd5465a44eb037d81a5627"},
-    {file = "async_lru-2.0.4-py3-none-any.whl", hash = "sha256:ff02944ce3c288c5be660c42dbcca0742b32c3b279d6dceda655190240b99224"},
 ]
 black = [
     {file = "black-23.12.1-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:e0aaf6041986767a5e0ce663c7a2f0e9eaf21e6ff87a5f95cbf3675bfd4c41d2"},

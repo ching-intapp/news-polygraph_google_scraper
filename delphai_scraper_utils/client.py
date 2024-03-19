@@ -39,7 +39,7 @@ import ssl
 from typing import Callable, Any, List, Mapping, Union
 from .metrics import request_response_received
 from time import perf_counter
-from async_lru import alru_cache
+from aiocache import cached
 from urllib.robotparser import RobotFileParser
 from urllib.parse import urlparse, urljoin
 
@@ -170,11 +170,10 @@ class AsyncRetryClient(AsyncClient):
             )
         return response
 
-    @alru_cache
+    @cached()
     async def get_robots_text_parser(
         self, base_url: str, user_agent: str
     ) -> RobotFileParser:
-
         robots_text_url = urljoin(base_url, "robots.txt")
         robot_file_parser = RobotFileParser(robots_text_url)
 
