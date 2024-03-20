@@ -167,7 +167,7 @@ class ScraperClient(AsyncClient):
     ) -> RobotFileParser:
         robots_text_url = urljoin(base_url, "robots.txt")
         robot_file_parser = RobotFileParser(robots_text_url)
-        with request_timer(self.scraper_id):
+        with request_timer(scraper_id=self.scraper_id):
             response = await super().request(
                 "GET",
                 robots_text_url,
