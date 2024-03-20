@@ -1,5 +1,5 @@
 from prometheus_client import Counter, Histogram
-from contextlib import asynccontextmanager
+from contextlib import contextmanager
 from time import perf_counter
 from typing import Optional
 
@@ -29,8 +29,8 @@ def request_response_received(*, scraper_id: str, response_time: float):
     scraper_requests_response_time.labels(**labels).observe(response_time)
 
 
-@asynccontextmanager
-async def request_timer(scraper_id: Optional[str] = None):
+@contextmanager
+def request_timer(scraper_id: Optional[str] = None):
     try:
         response_time = -perf_counter()
         yield
