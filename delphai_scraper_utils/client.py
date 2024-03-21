@@ -37,8 +37,10 @@ from tenacity import (
 )
 import ssl
 from typing import Callable, Any, List, Mapping, Union
-from .metrics import request_response_received
-from time import perf_counter
+from .metrics import request_timer
+from aiocache import cached
+from urllib.robotparser import RobotFileParser
+from urllib.parse import urlparse, urljoin
 
 
 HTTP_RETRY_EXCEPTION_TYPES = (
@@ -52,7 +54,7 @@ HTTP_RETRY_EXCEPTION_TYPES = (
 )
 
 
-class AsyncRetryClient(AsyncClient):
+class ScraperClient(AsyncClient):
     def __init__(
         self,
         *,
@@ -80,6 +82,7 @@ class AsyncRetryClient(AsyncClient):
         max_retry_attemps: int = 0,
         retry_wait_multiplier: int = 1,
         retry_wait_max: int = 1,
+        ignore_robots_txt: bool = False,
     ):
         super().__init__(
             auth=auth,
@@ -104,6 +107,7 @@ class AsyncRetryClient(AsyncClient):
         )
         self.scraper_id = scraper_id
         self.persist_cookies = persist_cookies
+        self.ignore_robots_txt = ignore_robots_txt
 
         # Wrap request in retry decorator
         self.request = retry(
@@ -132,29 +136,56 @@ class AsyncRetryClient(AsyncClient):
         timeout: Union[TimeoutTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
         extensions: dict = None,
     ) -> Response:
+
+        if not self.ignore_robots_txt:
+            user_agent = (headers or {}).get("user-agent", "*")
+            if not await self.is_allowed_by_robots_text(url, user_agent):
+                return Response(403)
+
         if not self.persist_cookies:
             self._cookies = Cookies(None)
-
-        response_time = -perf_counter()
-        response = await super().request(
-            method,
-            url,
-            content=content,
-            data=data,
-            files=files,
-            json=json,
-            params=params,
-            headers=headers,
-            cookies=cookies,
-            auth=auth,
-            follow_redirects=follow_redirects,
-            timeout=timeout,
-            extensions=extensions,
-        )
-        response_time += perf_counter()
-        if self.scraper_id:
-            request_response_received(
-                scraper_id=self.scraper_id,
-                response_time=response_time,
+        with request_timer(scraper_id=self.scraper_id):
+            return await super().request(
+                method,
+                url,
+                content=content,
+                data=data,
+                files=files,
+                json=json,
+                params=params,
+                headers=headers,
+                cookies=cookies,
+                auth=auth,
+                follow_redirects=follow_redirects,
+                timeout=timeout,
+                extensions=extensions,
             )
-        return response
+
+    @cached()
+    async def get_robots_text_parser(
+        self, base_url: str, user_agent: str
+    ) -> RobotFileParser:
+        robots_text_url = urljoin(base_url, "robots.txt")
+        robot_file_parser = RobotFileParser(robots_text_url)
+        with request_timer(scraper_id=self.scraper_id):
+            response = await super().request(
+                "GET",
+                robots_text_url,
+                headers={"user-agent": user_agent},
+            )
+
+        if response.status_code == 404:
+            # If no robots.txt is found, consider everything allowed
+            robot_file_parser.allow_all = True
+        else:
+            response.raise_for_status()
+            robot_file_parser.parse(response.iter_lines())
+
+        return robot_file_parser
+
+    async def is_allowed_by_robots_text(self, url: str, user_agent: str) -> bool:
+        parsed_url = urlparse(url)
+        base_url = f"{parsed_url.scheme}://{parsed_url.netloc}"
+        robots_text_parser = await self.get_robots_text_parser(base_url, user_agent)
+
+        return robots_text_parser.can_fetch(url=url, useragent=user_agent)

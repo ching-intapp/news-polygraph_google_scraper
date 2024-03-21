@@ -1,4 +1,7 @@
 from prometheus_client import Counter, Histogram
+from contextlib import contextmanager
+from time import perf_counter
+from typing import Optional
 
 scraper_requests_per_company = Histogram(
     name="scraper_requests_per_company",
@@ -24,6 +27,20 @@ def request_response_received(*, scraper_id: str, response_time: float):
 
     scraper_requests_count.labels(**labels).inc()
     scraper_requests_response_time.labels(**labels).observe(response_time)
+
+
+@contextmanager
+def request_timer(scraper_id: Optional[str] = None):
+    try:
+        response_time = -perf_counter()
+        yield
+    finally:
+        response_time += perf_counter()
+    if scraper_id:
+        request_response_received(
+            scraper_id=scraper_id,
+            response_time=response_time,
+        )
 
 
 scraper_datapoints = Histogram(
