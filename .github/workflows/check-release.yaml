@@ -3,13 +3,13 @@ name: Run checks and create release
 on:
   push:
     branches:
-      - master
+      - main
     paths:
       - 'delphai_scraper_utils/**'
       - 'pyproject.toml'
   pull_request:
     branches:
-      - master
+      - main
     paths:
       - 'delphai_scraper_utils/**'
       - 'pyproject.toml'
