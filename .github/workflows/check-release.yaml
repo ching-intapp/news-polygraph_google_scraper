@@ -1,0 +1,25 @@
+name: Run checks and create release
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'delphai_scraper_utils/**'
+      - 'pyproject.toml'
+  pull_request:
+    branches:
+      - master
+    paths:
+      - 'delphai_scraper_utils/**'
+      - 'pyproject.toml'
+
+jobs:
+  call:
+    name: "CI"
+    uses: "delphai/.github/.github/workflows/callable-pypi-check-release.yaml@master"
+    with:
+      python-version: "3.9"
+      poetry-version: "1.7.0"
+    secrets: inherit
+
