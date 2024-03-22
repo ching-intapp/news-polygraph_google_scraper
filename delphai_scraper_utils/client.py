@@ -79,7 +79,7 @@ class ScraperClient(AsyncClient):
         trust_env: bool = True,
         persist_cookies: bool = False,
         scraper_id: Union[str, None] = None,
-        max_retry_attemps: int = 0,
+        max_retry_attempts: int = 3,
         retry_wait_multiplier: int = 1,
         retry_wait_max: int = 1,
         ignore_robots_txt: bool = False,
@@ -111,7 +111,7 @@ class ScraperClient(AsyncClient):
 
         # Wrap request in retry decorator
         self.request = retry(
-            stop=stop_after_attempt(max_retry_attemps),
+            stop=stop_after_attempt(max_retry_attempts),
             wait=wait_random_exponential(
                 multiplier=retry_wait_multiplier, max=retry_wait_max
             ),
