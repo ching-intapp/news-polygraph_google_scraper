@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "delphai-scraper-utils"
-version = "0.1.0"
+version = "0.1.1"
 description = ""
 authors = ["Frederik Schwabe <frederik@delphai.com>"]
 
