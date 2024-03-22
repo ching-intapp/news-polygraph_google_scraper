@@ -279,7 +279,7 @@ python-versions = ">=3.8"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "91a0dd54b2656a9347032aafb5df29c9cf789f30c1e0e19eff44ee7d1ad1bb71"
+content-hash = "9ac249a3178331918665339177e47904382de55575eaa819db99474b37e67e87"
 
 [metadata.files]
 aiocache = [
