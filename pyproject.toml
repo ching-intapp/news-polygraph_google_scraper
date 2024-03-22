@@ -8,8 +8,8 @@ authors = ["Frederik Schwabe <frederik@delphai.com>"]
 python = "^3.9"
 httpx = "^0"
 prometheus-client = "^0"
-tenacity = "^8.2.3"
-aiocache = "^0.12.2"
+tenacity = "^8"
+aiocache = "^0"
 
 [tool.poetry.dev-dependencies]
 flake8 = "*"
