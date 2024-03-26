@@ -139,28 +139,31 @@ class ScraperClient(AsyncClient):
         timeout: Union[TimeoutTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
         extensions: dict = None,
     ) -> Response:
+
+        request = self.build_request(
+            method=method,
+            url=url,
+            content=content,
+            data=data,
+            files=files,
+            json=json,
+            params=params,
+            headers=headers,
+            cookies=cookies,
+            timeout=timeout,
+            extensions=extensions,
+        )
+
         if not self.ignore_robots_txt:
             user_agent = (headers or {}).get("user-agent", "*")
             if not await self.is_allowed_by_robots_text(url, user_agent):
-                return Response(403)
+                return Response(403, request=request)
 
         if not self.persist_cookies:
             self._cookies = Cookies(None)
         with request_timer(scraper_id=self.scraper_id):
-            return await super().request(
-                method,
-                url,
-                content=content,
-                data=data,
-                files=files,
-                json=json,
-                params=params,
-                headers=headers,
-                cookies=cookies,
-                auth=auth,
-                follow_redirects=follow_redirects,
-                timeout=timeout,
-                extensions=extensions,
+            return await self.send(
+                request, auth=auth, follow_redirects=follow_redirects
             )
 
     @cached()
