@@ -139,7 +139,6 @@ class ScraperClient(AsyncClient):
         timeout: Union[TimeoutTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
         extensions: dict = None,
     ) -> Response:
-
         request = self.build_request(
             method=method,
             url=url,
