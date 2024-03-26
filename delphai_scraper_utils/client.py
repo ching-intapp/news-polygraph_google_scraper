@@ -155,7 +155,7 @@ class ScraperClient(AsyncClient):
         )
 
         if not self.ignore_robots_txt:
-            user_agent = (headers or {}).get("user-agent", "*")
+            user_agent = request.headers.get("user-agent", "*")
             if not await self.is_allowed_by_robots_text(url, user_agent):
                 return Response(403, request=request)
 
