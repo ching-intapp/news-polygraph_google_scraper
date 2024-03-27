@@ -180,6 +180,7 @@ class ScraperClient(AsyncClient):
                     "GET",
                     robots_text_url,
                     headers={"user-agent": user_agent},
+                    follow_redirects=True,
                 )
 
         # Logic taken from urllib.robotparser.RobotFileParser.read function
