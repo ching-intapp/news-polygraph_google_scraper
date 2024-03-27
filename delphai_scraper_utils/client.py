@@ -1,3 +1,4 @@
+import ssl
 from httpx import (
     TimeoutException,
     ConnectError,
@@ -34,8 +35,8 @@ from tenacity import (
     wait_random_exponential,
     stop_after_attempt,
     retry_if_exception_type,
+    AsyncRetrying,
 )
-import ssl
 from typing import Callable, Any, List, Mapping, Union
 from .metrics import request_timer
 from aiocache import cached
@@ -83,6 +84,7 @@ class ScraperClient(AsyncClient):
         retry_wait_multiplier: int = 1,
         retry_wait_max: int = 1,
         ignore_robots_txt: bool = False,
+        robot_txt_retries: int = 3,
     ):
         super().__init__(
             auth=auth,
@@ -108,6 +110,7 @@ class ScraperClient(AsyncClient):
         self.scraper_id = scraper_id
         self.persist_cookies = persist_cookies
         self.ignore_robots_txt = ignore_robots_txt
+        self.robot_txt_retries = robot_txt_retries
 
         # Wrap request in retry decorator
         self.request = retry(
@@ -136,28 +139,30 @@ class ScraperClient(AsyncClient):
         timeout: Union[TimeoutTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
         extensions: dict = None,
     ) -> Response:
+        request = self.build_request(
+            method=method,
+            url=url,
+            content=content,
+            data=data,
+            files=files,
+            json=json,
+            params=params,
+            headers=headers,
+            cookies=cookies,
+            timeout=timeout,
+            extensions=extensions,
+        )
+
         if not self.ignore_robots_txt:
-            user_agent = (headers or {}).get("user-agent", "*")
+            user_agent = request.headers.get("user-agent", "*")
             if not await self.is_allowed_by_robots_text(url, user_agent):
-                return Response(403)
+                return Response(403, request=request)
 
         if not self.persist_cookies:
             self._cookies = Cookies(None)
         with request_timer(scraper_id=self.scraper_id):
-            return await super().request(
-                method,
-                url,
-                content=content,
-                data=data,
-                files=files,
-                json=json,
-                params=params,
-                headers=headers,
-                cookies=cookies,
-                auth=auth,
-                follow_redirects=follow_redirects,
-                timeout=timeout,
-                extensions=extensions,
+            return await self.send(
+                request, auth=auth, follow_redirects=follow_redirects
             )
 
     @cached()
@@ -166,20 +171,26 @@ class ScraperClient(AsyncClient):
     ) -> RobotFileParser:
         robots_text_url = urljoin(base_url, "robots.txt")
         robot_file_parser = RobotFileParser(robots_text_url)
-        with request_timer(scraper_id=self.scraper_id):
-            response = await super().request(
-                "GET",
-                robots_text_url,
-                headers={"user-agent": user_agent},
-            )
 
-        if response.status_code == 404:
+        async for attempt in AsyncRetrying(
+            stop=stop_after_attempt(self.robot_txt_retries)
+        ):
+            with request_timer(scraper_id=self.scraper_id), attempt:
+                response = await super().request(
+                    "GET",
+                    robots_text_url,
+                    headers={"user-agent": user_agent},
+                    follow_redirects=True,
+                )
+
+        # Logic taken from urllib.robotparser.RobotFileParser.read function
+        if response.status_code == 200:
+            robot_file_parser.parse(response.iter_lines())
+        elif response.status_code in (401, 403):
+            robot_file_parser.disallow_all = True
+        else:
             # If no robots.txt is found, consider everything allowed
             robot_file_parser.allow_all = True
-        else:
-            response.raise_for_status()
-            robot_file_parser.parse(response.iter_lines())
-
         return robot_file_parser
 
     async def is_allowed_by_robots_text(self, url: str, user_agent: str) -> bool:
