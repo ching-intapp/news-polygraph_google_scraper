@@ -183,10 +183,10 @@ class ScraperClient(AsyncClient):
                 )
 
         # Logic taken from urllib.robotparser.RobotFileParser.read function
-        if response.status_code in (401, 403):
-            robot_file_parser.disallow_all = True
-        elif response.status_code == 200:
+        if response.status_code == 200:
             robot_file_parser.parse(response.iter_lines())
+        elif response.status_code in (401, 403):
+            robot_file_parser.disallow_all = True
         else:
             # If no robots.txt is found, consider everything allowed
             robot_file_parser.allow_all = True
