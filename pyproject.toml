@@ -10,6 +10,12 @@ httpx = "^0"
 prometheus-client = "^0"
 tenacity = "^8"
 aiocache = "^0"
+requests = "^2.32.3"
+bs4 = "^0.0.2"
+sentence-transformers = "^3.0.1"
+trafilatura = "^1.11.0"
+newspaper3k = "^0.2.8"
+nltk = "^3.8.1"
 
 [tool.poetry.dev-dependencies]
 flake8 = "*"

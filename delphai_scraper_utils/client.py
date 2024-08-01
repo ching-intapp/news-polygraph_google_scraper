@@ -1,4 +1,6 @@
 import ssl
+import httpx
+
 from httpx import (
     TimeoutException,
     ConnectError,
