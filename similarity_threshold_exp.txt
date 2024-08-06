@@ -1,0 +1,36 @@
+claim: Wheaties cereal sticks to magnets because it has metal flakes
+retrieved page titles:
+    -  Wheaties Cereal Sticks to Magnets Because It Contains Iron?
+    -  Wheaties Cereal Found to Contain so Many Metal ...
+    -  I Tried to Magnetize My Wheaties
+    (ss: 0.7)
+    -  There's Metal in My Cereal!
+    (ss: 0.6)
+    -  Ultra iron fortified cereal. I don't think it's supposed to do that.
+    -  Get the Iron out--of Your Breakfast Cereal
+    -  Cereals processing technology
+    -  Is fortified iron in cereal metallic iron or an oxide
+    -  How to extract iron from cereal
+    (ss: 0.5)
+
+#
+
+claim: A photograph shows Barack Obama sitting with Malcolm X and Martin Luther King, Jr.
+retrieced page titles:
+    -  Photo shows Barack Obama sitting with Malcolm X and ...
+    -  Did Barack Obama Meet with Malcolm X and Martin Luther King, Jr.?
+    -  Barack Obama Martin Luther King Jr and Malcolm X Art Print
+    -  MLK, Jr., Barack Obama, and Malcolm X in a mural by Shyaan Khufu, Master Burger, 4423 S. Western Ave., Los Angeles, California, 2010
+    -  FACT CHECK: Did Barack Obama Meet with Malcolm X and Martin Luther King, Jr.? in 2024 | Martin luther king, Martin luther king jr, Martin luther
+    (ss: 0.7)
+    -  MLK Jr., Malcolm X, and Barack Obama mural at Faith in Christ Ministries, 46th Street at S. Western Ave., Los Angeles, California, 2010  | Library of Congress
+    -  How would Martin Luther King and Malcolm X have judged President Obama? - Quora
+    -  113 Malcolm X Martin Luther King Stock Photos, High-Res ...
+    (ss: 0.6)
+    -  The Political Uses of Malcolm X's Image
+    -  Compare And Contrast Martin Luther King And Obama
+    -  Barack Obama Martin Luther King Jr and Malcolm X Greeting Card by Ylli Haruni
+    -  25 Pictures of Martin Luther King Jr.'s Life and Legacy
+    -  American Icons: "The Autobiography of Malcolm X"
+    -  Watching Time: James Baldwin and Malcolm X
+    (ss: 0.5)
