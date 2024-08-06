@@ -21,7 +21,7 @@ from delphai_scraper_utils import ScraperClient
 from delphai_scraper_utils.deboilerplating import get_text_from_html
 from delphai_scraper_utils.utils import Maybe, get_maybe, remove_duplicates, get_full_title
 
-SCALESERP_KEY = "BCBA058807E94C6B98242339646AF525"
+SCALESERP_KEY = "API-KEY"
 SCRAPER_ID = "google_search"
 SIMILARITY_THRESHOLD = 0.6
 TOP_N = 15
