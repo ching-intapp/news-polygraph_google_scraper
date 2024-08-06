@@ -1,0 +1,364 @@
+{
+    "request_info": {
+        "success": true,
+        "credits_used": 92,
+        "credits_used_this_request": 1,
+        "credits_remaining": 33,
+        "credits_reset_at": "2024-08-24T14:43:44.000Z"
+    },
+    "search_parameters": {
+        "q": "A photograph showing a group of astronauts without their helmets on indicates that the moon landing was staged.",
+        "page": "1",
+        "num": "10",
+        "engine": "google"
+    },
+    "search_metadata": {
+        "created_at": "2024-08-06T09:32:28.770Z",
+        "processed_at": "2024-08-06T09:32:31.182Z",
+        "total_time_taken": 2.41,
+        "engine_url": "https://www.google.com/search?q=A+photograph+showing+a+group+of+astronauts+without+their+helmets+on+indicates+that+the+moon+landing+was+staged.&num=10",
+        "html_url": "https://api.scaleserp.com/search?api_key=BCBA058807E94C6B98242339646AF525&q=A+photograph+showing+a+group+of+astronauts+without+their+helmets+on+indicates+that+the+moon+landing+was+staged.&page=1&num=10&engine=google&output=html",
+        "json_url": "https://api.scaleserp.com/search?api_key=BCBA058807E94C6B98242339646AF525&q=A+photograph+showing+a+group+of+astronauts+without+their+helmets+on+indicates+that+the+moon+landing+was+staged.&page=1&num=10&engine=google&output=json"
+    },
+    "search_information": {
+        "original_query_yields_zero_results": false,
+        "total_results": 116000
+    },
+    "pagination": {
+        "current": 1,
+        "next": "https://www.google.com/search?q=A+photograph+showing+a+group+of+astronauts+without+their+helmets+on+indicates+that+the+moon+landing+was+staged.&sca_esv=ecca4e17a2edffed&ei=re2xZvKUL5jCp84Py_juoQE&start=10&sa=N&sstk=AagrsuhO9PbcSgn5ne8JlHxlb_6evVvr5rRsSq5S2_jvuuqI5pIypRTFjsODv7sdztq4ZrRD_ey3Ix1NgOm5JBQv-51WdKJeOxFqbw&ved=2ahUKEwiyn8PHh-CHAxUY4ckDHUu8OxQQ8NMDegQIBhAW",
+        "other_pages": [
+            {
+                "page": 2,
+                "link": "https://www.google.com/search?q=A+photograph+showing+a+group+of+astronauts+without+their+helmets+on+indicates+that+the+moon+landing+was+staged.&sca_esv=ecca4e17a2edffed&ei=re2xZvKUL5jCp84Py_juoQE&start=10&sa=N&sstk=AagrsuhO9PbcSgn5ne8JlHxlb_6evVvr5rRsSq5S2_jvuuqI5pIypRTFjsODv7sdztq4ZrRD_ey3Ix1NgOm5JBQv-51WdKJeOxFqbw&ved=2ahUKEwiyn8PHh-CHAxUY4ckDHUu8OxQQ8tMDegQIBhAE"
+            },
+            {
+                "page": 3,
+                "link": "https://www.google.com/search?q=A+photograph+showing+a+group+of+astronauts+without+their+helmets+on+indicates+that+the+moon+landing+was+staged.&sca_esv=ecca4e17a2edffed&ei=re2xZvKUL5jCp84Py_juoQE&start=20&sa=N&sstk=AagrsuhO9PbcSgn5ne8JlHxlb_6evVvr5rRsSq5S2_jvuuqI5pIypRTFjsODv7sdztq4ZrRD_ey3Ix1NgOm5JBQv-51WdKJeOxFqbw&ved=2ahUKEwiyn8PHh-CHAxUY4ckDHUu8OxQQ8tMDegQIBhAG"
+            },
+            {
+                "page": 4,
+                "link": "https://www.google.com/search?q=A+photograph+showing+a+group+of+astronauts+without+their+helmets+on+indicates+that+the+moon+landing+was+staged.&sca_esv=ecca4e17a2edffed&ei=re2xZvKUL5jCp84Py_juoQE&start=30&sa=N&sstk=AagrsuhO9PbcSgn5ne8JlHxlb_6evVvr5rRsSq5S2_jvuuqI5pIypRTFjsODv7sdztq4ZrRD_ey3Ix1NgOm5JBQv-51WdKJeOxFqbw&ved=2ahUKEwiyn8PHh-CHAxUY4ckDHUu8OxQQ8tMDegQIBhAI"
+            },
+            {
+                "page": 5,
+                "link": "https://www.google.com/search?q=A+photograph+showing+a+group+of+astronauts+without+their+helmets+on+indicates+that+the+moon+landing+was+staged.&sca_esv=ecca4e17a2edffed&ei=re2xZvKUL5jCp84Py_juoQE&start=40&sa=N&sstk=AagrsuhO9PbcSgn5ne8JlHxlb_6evVvr5rRsSq5S2_jvuuqI5pIypRTFjsODv7sdztq4ZrRD_ey3Ix1NgOm5JBQv-51WdKJeOxFqbw&ved=2ahUKEwiyn8PHh-CHAxUY4ckDHUu8OxQQ8tMDegQIBhAK"
+            },
+            {
+                "page": 6,
+                "link": "https://www.google.com/search?q=A+photograph+showing+a+group+of+astronauts+without+their+helmets+on+indicates+that+the+moon+landing+was+staged.&sca_esv=ecca4e17a2edffed&ei=re2xZvKUL5jCp84Py_juoQE&start=50&sa=N&sstk=AagrsuhO9PbcSgn5ne8JlHxlb_6evVvr5rRsSq5S2_jvuuqI5pIypRTFjsODv7sdztq4ZrRD_ey3Ix1NgOm5JBQv-51WdKJeOxFqbw&ved=2ahUKEwiyn8PHh-CHAxUY4ckDHUu8OxQQ8tMDegQIBhAM"
+            },
+            {
+                "page": 7,
+                "link": "https://www.google.com/search?q=A+photograph+showing+a+group+of+astronauts+without+their+helmets+on+indicates+that+the+moon+landing+was+staged.&sca_esv=ecca4e17a2edffed&ei=re2xZvKUL5jCp84Py_juoQE&start=60&sa=N&sstk=AagrsuhO9PbcSgn5ne8JlHxlb_6evVvr5rRsSq5S2_jvuuqI5pIypRTFjsODv7sdztq4ZrRD_ey3Ix1NgOm5JBQv-51WdKJeOxFqbw&ved=2ahUKEwiyn8PHh-CHAxUY4ckDHUu8OxQQ8tMDegQIBhAO"
+            },
+            {
+                "page": 8,
+                "link": "https://www.google.com/search?q=A+photograph+showing+a+group+of+astronauts+without+their+helmets+on+indicates+that+the+moon+landing+was+staged.&sca_esv=ecca4e17a2edffed&ei=re2xZvKUL5jCp84Py_juoQE&start=70&sa=N&sstk=AagrsuhO9PbcSgn5ne8JlHxlb_6evVvr5rRsSq5S2_jvuuqI5pIypRTFjsODv7sdztq4ZrRD_ey3Ix1NgOm5JBQv-51WdKJeOxFqbw&ved=2ahUKEwiyn8PHh-CHAxUY4ckDHUu8OxQQ8tMDegQIBhAQ"
+            },
+            {
+                "page": 9,
+                "link": "https://www.google.com/search?q=A+photograph+showing+a+group+of+astronauts+without+their+helmets+on+indicates+that+the+moon+landing+was+staged.&sca_esv=ecca4e17a2edffed&ei=re2xZvKUL5jCp84Py_juoQE&start=80&sa=N&sstk=AagrsuhO9PbcSgn5ne8JlHxlb_6evVvr5rRsSq5S2_jvuuqI5pIypRTFjsODv7sdztq4ZrRD_ey3Ix1NgOm5JBQv-51WdKJeOxFqbw&ved=2ahUKEwiyn8PHh-CHAxUY4ckDHUu8OxQQ8tMDegQIBhAS"
+            },
+            {
+                "page": 10,
+                "link": "https://www.google.com/search?q=A+photograph+showing+a+group+of+astronauts+without+their+helmets+on+indicates+that+the+moon+landing+was+staged.&sca_esv=ecca4e17a2edffed&ei=re2xZvKUL5jCp84Py_juoQE&start=90&sa=N&sstk=AagrsuhO9PbcSgn5ne8JlHxlb_6evVvr5rRsSq5S2_jvuuqI5pIypRTFjsODv7sdztq4ZrRD_ey3Ix1NgOm5JBQv-51WdKJeOxFqbw&ved=2ahUKEwiyn8PHh-CHAxUY4ckDHUu8OxQQ8tMDegQIBhAU"
+            }
+        ],
+        "api_pagination": {
+            "next": "https://api.scaleserp.com/search?api_key=BCBA058807E94C6B98242339646AF525&q=A%20photograph%20showing%20a%20group%20of%20astronauts%20without%20their%20helmets%20on%20indicates%20that%20the%20moon%20landing%20was%20staged.&id=req0&page=2",
+            "other_pages": [
+                {
+                    "page": 2,
+                    "link": "https://api.scaleserp.com/search?api_key=BCBA058807E94C6B98242339646AF525&q=A%20photograph%20showing%20a%20group%20of%20astronauts%20without%20their%20helmets%20on%20indicates%20that%20the%20moon%20landing%20was%20staged.&id=req0&page=2"
+                },
+                {
+                    "page": 3,
+                    "link": "https://api.scaleserp.com/search?api_key=BCBA058807E94C6B98242339646AF525&q=A%20photograph%20showing%20a%20group%20of%20astronauts%20without%20their%20helmets%20on%20indicates%20that%20the%20moon%20landing%20was%20staged.&id=req0&page=3"
+                },
+                {
+                    "page": 4,
+                    "link": "https://api.scaleserp.com/search?api_key=BCBA058807E94C6B98242339646AF525&q=A%20photograph%20showing%20a%20group%20of%20astronauts%20without%20their%20helmets%20on%20indicates%20that%20the%20moon%20landing%20was%20staged.&id=req0&page=4"
+                },
+                {
+                    "page": 5,
+                    "link": "https://api.scaleserp.com/search?api_key=BCBA058807E94C6B98242339646AF525&q=A%20photograph%20showing%20a%20group%20of%20astronauts%20without%20their%20helmets%20on%20indicates%20that%20the%20moon%20landing%20was%20staged.&id=req0&page=5"
+                },
+                {
+                    "page": 6,
+                    "link": "https://api.scaleserp.com/search?api_key=BCBA058807E94C6B98242339646AF525&q=A%20photograph%20showing%20a%20group%20of%20astronauts%20without%20their%20helmets%20on%20indicates%20that%20the%20moon%20landing%20was%20staged.&id=req0&page=6"
+                },
+                {
+                    "page": 7,
+                    "link": "https://api.scaleserp.com/search?api_key=BCBA058807E94C6B98242339646AF525&q=A%20photograph%20showing%20a%20group%20of%20astronauts%20without%20their%20helmets%20on%20indicates%20that%20the%20moon%20landing%20was%20staged.&id=req0&page=7"
+                },
+                {
+                    "page": 8,
+                    "link": "https://api.scaleserp.com/search?api_key=BCBA058807E94C6B98242339646AF525&q=A%20photograph%20showing%20a%20group%20of%20astronauts%20without%20their%20helmets%20on%20indicates%20that%20the%20moon%20landing%20was%20staged.&id=req0&page=8"
+                },
+                {
+                    "page": 9,
+                    "link": "https://api.scaleserp.com/search?api_key=BCBA058807E94C6B98242339646AF525&q=A%20photograph%20showing%20a%20group%20of%20astronauts%20without%20their%20helmets%20on%20indicates%20that%20the%20moon%20landing%20was%20staged.&id=req0&page=9"
+                },
+                {
+                    "page": 10,
+                    "link": "https://api.scaleserp.com/search?api_key=BCBA058807E94C6B98242339646AF525&q=A%20photograph%20showing%20a%20group%20of%20astronauts%20without%20their%20helmets%20on%20indicates%20that%20the%20moon%20landing%20was%20staged.&id=req0&page=10"
+                }
+            ]
+        }
+    },
+    "organic_results": [
+        {
+            "position": 1,
+            "title": "Image of astronauts without helmets was taken during a ...",
+            "link": "https://www.reuters.com/article/fact-check/image-of-astronauts-without-helmets-was-taken-during-a-training-exercise-idUSL1N2QJ1G9/",
+            "domain": "www.reuters.com",
+            "displayed_link": "https://www.reuters.com › article › fact-check › image-...",
+            "snippet": "Sep 17, 2021 — Social media users have shared an image falsely claiming that it is proof that the moon landing was staged.",
+            "prerender": false,
+            "missing_words": [
+                "group",
+                "indicates"
+            ],
+            "rich_snippet": {
+                "top": {
+                    "detected_extensions": {},
+                    "extensions": [
+                        "Missing: group ‎indicates"
+                    ]
+                }
+            },
+            "date": "Sep 17, 2021",
+            "date_utc": "2021-09-17T00:00:00.000Z",
+            "block_position": 2
+        },
+        {
+            "position": 2,
+            "title": "Astronauts Didn't Wear Helmets on the Moon?",
+            "link": "https://www.snopes.com/fact-check/astronauts-helmets-moon-landing/",
+            "domain": "www.snopes.com",
+            "displayed_link": "https://www.snopes.com › Fact Check",
+            "snippet": "Claim: A photograph showing a group of astronauts without their helmets on indicates that the moon landings were staged.Fact check by Snopes: FalseClaim: A photograph showing a group of astronauts without their helmets on indicates that the moon landings were staged.Fact check by Snopes: FalseClaim: A photograph showing a group of astronauts without their helmets on indicates that the moon landings were staged.Fact check by Snopes: False",
+            "prerender": false,
+            "block_position": 3
+        },
+        {
+            "position": 3,
+            "title": "Astronauts without helmets image is from training, not proof ...",
+            "link": "https://www.usatoday.com/story/news/factcheck/2024/05/30/apollo-16-helmets-moon-landing-not-fake-fact-check/73899992007/",
+            "domain": "www.usatoday.com",
+            "displayed_link": "https://www.usatoday.com › factcheck › 2024/05/30 › a...",
+            "snippet": "Claim: Image shows NASA astronauts posing for picture on the moon without helmetsClaimed by: Social mediaFact check by USA Today: FalseClaim: Image shows NASA astronauts posing for picture on the moon without helmetsClaimed by: Social mediaFact check by USA Today: FalseClaim: Image shows NASA astronauts posing for picture on the moon without helmetsClaimed by: Social mediaFact check by USA Today: False",
+            "prerender": false,
+            "block_position": 4
+        },
+        {
+            "position": 4,
+            "title": "55 Years Ago: Two Months Until the Moon Landing",
+            "link": "https://www.nasa.gov/history/55-years-ago-two-months-until-the-moon-landing/",
+            "domain": "www.nasa.gov",
+            "displayed_link": "https://www.nasa.gov › history › 55-years-ago-two-mo...",
+            "snippet": "May 20, 2024 — The march to the first Moon landing took a giant leap forward in May 1969 with the successful completion of Apollo 10, essentially a dress ...",
+            "prerender": false,
+            "sitelinks": {
+                "expanded": [
+                    {
+                        "title": "indicates",
+                        "link": "/search?sca_esv=ecca4e17a2edffed&q=A+photograph+showing+a+group+of+astronauts+without+their+helmets+on+%22indicates%22+that+the+moon+landing+was+staged.&sa=X&ved=2ahUKEwiyn8PHh-CHAxUY4ckDHUu8OxQQ5t4CegQIKBAB",
+                        "snippet": "",
+                        "date_raw": "",
+                        "date": null,
+                        "answers": null,
+                        "answers_raw": null
+                    }
+                ]
+            },
+            "sitelinks_search_box": false,
+            "missing_words": [
+                "indicates"
+            ],
+            "rich_snippet": {
+                "top": {
+                    "detected_extensions": {},
+                    "extensions": [
+                        "Missing: indicates ‎| Show results with: indicates"
+                    ]
+                }
+            },
+            "date": "May 20, 2024",
+            "date_utc": "2024-05-20T00:00:00.000Z",
+            "block_position": 5
+        },
+        {
+            "position": 5,
+            "title": "Apollo 11: The Moon Landing",
+            "link": "https://airandspace.si.edu/explore/stories/apollo-11-moon-landing",
+            "domain": "airandspace.si.edu",
+            "displayed_link": "https://airandspace.si.edu › explore › stories › apollo-11...",
+            "snippet": "On July 20, 1969, humans walked on the Moon for the first time.We look back at the legacy of our first small steps on the Moon and look forward to the next ...",
+            "prerender": false,
+            "sitelinks": {
+                "expanded": [
+                    {
+                        "title": "indicates",
+                        "link": "/search?sca_esv=ecca4e17a2edffed&q=A+photograph+showing+a+group+of+astronauts+without+their+helmets+on+%22indicates%22+that+the+moon+landing+was+staged.&sa=X&ved=2ahUKEwiyn8PHh-CHAxUY4ckDHUu8OxQQ5t4CegQIIhAB",
+                        "snippet": "",
+                        "date_raw": "",
+                        "date": null,
+                        "answers": null,
+                        "answers_raw": null
+                    }
+                ]
+            },
+            "sitelinks_search_box": false,
+            "missing_words": [
+                "indicates"
+            ],
+            "rich_snippet": {
+                "top": {
+                    "detected_extensions": {},
+                    "extensions": [
+                        "Missing: indicates ‎| Show results with: indicates"
+                    ]
+                }
+            },
+            "block_position": 6
+        },
+        {
+            "position": 6,
+            "title": "Moon landing conspiracy theories, debunked",
+            "link": "https://www.rmg.co.uk/stories/topics/moon-landing-conspiracy-theories-debunked",
+            "domain": "www.rmg.co.uk",
+            "displayed_link": "https://www.rmg.co.uk › stories › topics › moon-landin...",
+            "snippet": "Heard all this before? Conspiracy theories surrounding the Moon landings have proved worryingly persistent in the 50 years since Neil Armstrong and Buzz Aldrin ...",
+            "prerender": false,
+            "sitelinks": {
+                "expanded": [
+                    {
+                        "title": "helmets",
+                        "link": "/search?sca_esv=ecca4e17a2edffed&q=A+photograph+showing+a+group+of+astronauts+without+their+%22helmets%22+on+indicates+that+the+moon+landing+was+staged.&sa=X&ved=2ahUKEwiyn8PHh-CHAxUY4ckDHUu8OxQQ5t4CegQIIxAB",
+                        "snippet": "",
+                        "date_raw": "",
+                        "date": null,
+                        "answers": null,
+                        "answers_raw": null
+                    }
+                ]
+            },
+            "sitelinks_search_box": false,
+            "missing_words": [
+                "helmets"
+            ],
+            "rich_snippet": {
+                "top": {
+                    "detected_extensions": {},
+                    "extensions": [
+                        "Missing: helmets ‎| Show results with: helmets"
+                    ]
+                }
+            },
+            "block_position": 7
+        },
+        {
+            "position": 7,
+            "title": "Here's a fact: We went to the moon in 1969",
+            "link": "https://apnews.com/article/8bad42bcddb94c91860c76b71f994e45",
+            "domain": "apnews.com",
+            "displayed_link": "https://apnews.com › article",
+            "snippet": "Jul 11, 2019 — NEW YORK (AP) — Fifty years after Neil Armstrong and Buzz Aldrin walked on the moon, some people insist it never happened and was all a big ...",
+            "prerender": false,
+            "missing_words": [
+                "group",
+                "indicates"
+            ],
+            "rich_snippet": {
+                "top": {
+                    "detected_extensions": {},
+                    "extensions": [
+                        "Missing: group ‎indicates"
+                    ]
+                }
+            },
+            "date": "Jul 11, 2019",
+            "date_utc": "2019-07-11T00:00:00.000Z",
+            "block_position": 8
+        },
+        {
+            "position": 8,
+            "title": "The Wildest Apollo 11 Moon Landing Conspiracy Theories ...",
+            "link": "https://www.history.com/news/moon-landing-fake-conspiracy-theories",
+            "domain": "www.history.com",
+            "displayed_link": "https://www.history.com › Topics › 1960s",
+            "snippet": "Jun 10, 2019 — Claims the Apollo 11 mission was staged began soon after astronauts first set foot on the moon in 1969.",
+            "prerender": false,
+            "missing_words": [
+                "group",
+                "indicates"
+            ],
+            "rich_snippet": {
+                "top": {
+                    "detected_extensions": {},
+                    "extensions": [
+                        "Missing: group ‎indicates"
+                    ]
+                }
+            },
+            "date": "Jun 10, 2019",
+            "date_utc": "2019-06-10T00:00:00.000Z",
+            "block_position": 9
+        },
+        {
+            "position": 9,
+            "title": "55 Years Ago: One Month Until the Moon Landing",
+            "link": "https://www.nasa.gov/history/55-years-ago-one-month-until-the-moon-landing/",
+            "domain": "www.nasa.gov",
+            "displayed_link": "https://www.nasa.gov › history › 55-years-ago-one-mo...",
+            "snippet": "Jun 20, 2024 — With the dress rehearsal completed during Apollo 10 in May 1969, only a few weeks remained until Apollo 11, the actual Moon landing mission ...",
+            "prerender": false,
+            "date": "Jun 20, 2024",
+            "date_utc": "2024-06-20T00:00:00.000Z",
+            "block_position": 10
+        },
+        {
+            "position": 10,
+            "title": "Moon landing conspiracy theories",
+            "link": "https://en.wikipedia.org/wiki/Moon_landing_conspiracy_theories",
+            "domain": "en.wikipedia.org",
+            "displayed_link": "https://en.wikipedia.org › wiki › Moon_landing_conspi...",
+            "snippet": "Moon landing conspiracy theories claim that some or all elements of the Apollo program and the associated Moon landings were hoaxes staged by NASA, ...",
+            "prerender": false,
+            "sitelinks": {
+                "inline": [
+                    {
+                        "title": "References",
+                        "link": "https://en.wikipedia.org/wiki/Moon_landing_conspiracy_theories_in_popular_culture"
+                    },
+                    {
+                        "title": "Great Moon Hoax",
+                        "link": "https://en.wikipedia.org/wiki/Great_Moon_Hoax"
+                    },
+                    {
+                        "title": "Astronauts Gone Wild",
+                        "link": "https://en.wikipedia.org/wiki/Astronauts_Gone_Wild"
+                    },
+                    {
+                        "title": "Lunar Flag Assembly",
+                        "link": "https://en.wikipedia.org/wiki/Lunar_Flag_Assembly"
+                    }
+                ]
+            },
+            "rich_snippet": {
+                "top": {
+                    "detected_extensions": {},
+                    "extensions": [
+                        "‎References",
+                        "‎Great Moon Hoax",
+                        "‎Astronauts Gone Wild",
+                        "‎Lunar Flag Assembly"
+                    ]
+                }
+            },
+            "block_position": 11
+        }
+    ]
+}
