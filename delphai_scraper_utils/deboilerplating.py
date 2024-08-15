@@ -91,11 +91,10 @@ def deboilerplating(html: str):
 def get_html(url: str) -> str:
     return trafilatura.fetch_url(url)
 
-
 def get_text_from_html(html: str) -> str:
     result = deboilerplating(html)
-    print('result:', result)
-    print('')
+    #print('result:', result)
+    #print('')
     text = "".join(result["set"])
     pattern = r"\n+| \n"
     text = re.sub(pattern, "\n", text).strip()

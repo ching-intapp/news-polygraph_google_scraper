@@ -16,7 +16,7 @@ from newspaper import Article
 
 
 '''
-SCALESERP_KEY = 'BCBA058807E94C6B98242339646AF525'
+SCALESERP_KEY = 'API-KEY'
 SCRAPER_ID = "google_search"
 httpx_client = ScraperClient(scraper_id=SCRAPER_ID)
 
